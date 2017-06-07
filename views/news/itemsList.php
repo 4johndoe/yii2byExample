@@ -5,8 +5,11 @@
 	</tr>
 	<?php foreach ($newsList as $item) { ?>
 	<tr>
-		<td><?php echo $item['title'] ?></td>
-		<td><?php echo $item['date'] ?></td>
+		<th>
+			<a href="<?php echo Yii::$app->urlManager->createUrl(
+				['news/item-detail', 'title' => $item['title']]
+			)?>"><?php echo $item['title'] ?></a></th>
+		<th><?php echo $item['date'] ?></th>
 	</tr>
 	<?php } ?>
 </table>
