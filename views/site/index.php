@@ -1,5 +1,9 @@
 <?php
 
+$this->params['breadcrumbs'][] = 'My website';
+$backgroundColor = isset($_REQUEST['bckg'])?$_REQUEST['bckg']:'#FFFFFF';
+$this->params['background_color'] = $backgroundColor;
+
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';

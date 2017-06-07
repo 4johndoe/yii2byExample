@@ -22,8 +22,10 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<?php $backgroundColor = isset($this->params['bachground_color'])?$this->params['bachground_color']:'#FFFFFF'; ?>
+<body style="background-color: <?php echo $backgroundColor ?>">
 <?php $this->beginBody() ?>
+
 
 <div class="wrap">
     <?php
@@ -38,6 +40,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'News', 'url' => ['/news/items-list']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
