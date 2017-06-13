@@ -16,7 +16,15 @@ class RoomsController extends Controller
 		$model = new Room();
 		$modelCanSave = false;
 
-		if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+		if ($model->load(Yii::$app->request->post()) && $model->validate()) 
+		{
+			$model->fileImage = UploadedFile::getInstance($model, 'fileImage');
+
+			if ($model->fileImage) {
+				$model->fileImage->saveAs(Yii::getAlias('@uploadedfilesdir/' .
+				$model->fileImage->baseName . '.' . $model->fileImage->extension));
+			}
+
 			$modelCanSave = true;
 		}
 
