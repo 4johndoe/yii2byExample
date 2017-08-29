@@ -9,6 +9,8 @@ use yii\web\Controller;
 // use yii\filters\VerbFilter;
 // use app\models\LoginForm;
 // use app\models\ContactForm;
+use app\models\customer\CustomerRecord;
+use app\models\customer\PhoneRecord;
 
 class CustomersController extends Controller
 {
@@ -16,6 +18,13 @@ class CustomersController extends Controller
     {
     	// $records = $this->findRecordsByQuery();
     	return $this->render('index', compact('records'));
+    }
+
+    public function actionAdd()
+    {
+        $customer = new CustomerRecord;
+        $phone = new PhoneRecord;
+        return $this->render('add', compact('customer', 'phone'));
     }
 
     private function store(Customer $customer)

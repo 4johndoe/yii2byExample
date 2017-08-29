@@ -6,4 +6,4 @@ customer:
 	email
 	phone
 
-60
+67
