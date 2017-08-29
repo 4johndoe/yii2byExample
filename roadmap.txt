@@ -1,0 +1,9 @@
+customer:
+	address
+	notes
+	birthday
+	name
+	email
+	phone
+
+60
